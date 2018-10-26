@@ -22,7 +22,9 @@
 			text-align: center;
 		}
 		#download_text{
-			
+			color: blue;
+			text-decoration: underline;
+			cursor: pointer;
 		}
 	</style>
 	<script>
@@ -31,18 +33,18 @@
 			if(flag){
 				return;
 			}
-			document.getElementById('download_text').innerHTML = "正在安装app，请在手机桌面查看安装进度...";
+			document.getElementById('download_text').innerHTML = "点击安装后，请在手机桌面查看安装进度...";
 			flag = true;
+			location.href = "itms-services:///?action=download-manifest&url=https://demoby.github.io/zlbapp/manifest.plist";
 		}
 	</script>
 	</head> 
 	<body> 
 	<div class="doc"> 
 		<p align="center">
-			<a id="download_text" href="itms-services:///?action=download-manifest&url=
-				https://demoby.github.io/zlbapp/manifest.plist" onclick="update_text();">请点击此处下载app</a>
+			<a id="download_text" onclick="update_text();">请点击此处下载app</a>
 		</p>
-		<p class="title-sty">安装时可能因为网络原因安装较慢请耐心等待...</p>
+		<p class="title-sty">安装时可能因为网络原因安装较慢请耐心等待。</p>
 	</div>
 	</body> 
 	</html>
